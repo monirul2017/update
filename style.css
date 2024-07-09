@@ -1,0 +1,470 @@
+/* common css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+}
+
+.container{
+    width: 100%;
+    max-width: 1170px;
+    margin: auto;
+}
+
+/* header area css */
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) ,url(img/images\ \(7\).jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.top-header{
+    width: 100%;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-header .logo{
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.top-header span{
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.top-header nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 25px;
+}
+.top-header nav ul li a{
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 18px;
+    color: white;
+}
+
+/* mobile-menu */ 
+
+.mobile-menu .open{
+    color: white;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-menu .overlay{
+    width: 300px;
+    height: 700px;
+    background-color: darkslategray;
+    position: fixed;
+    top: 0px;
+    left:-600px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+}
+
+.mobile-menu .overlay .close{
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.mobile-menu .menu a{
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 17px;
+    text-transform: capitalize;
+}
+
+/* main header */
+
+.header-content{
+    margin-top: 20%;
+}
+
+.header-content h2{
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.header-content p{
+    color: white;
+    padding: 20px 0;
+}
+
+.header-content button{
+    padding: 8px 20px ;
+    background: orange;
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+    text-transform: capitalize;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.header-content button:hover{
+    transform: scale(1.2);
+}
+
+@media only screen and (max-width: 670px) and (min-width:320px){
+
+    .top-header nav ul{
+        display: none;
+    }
+
+    .mobile-menu .open{
+        display: block;
+    }
+
+    .mobile-menu.active-menu .overlay{
+        left: 0;
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+    }
+
+
+    .top-header .logo{
+        padding-left: 10px;
+    }
+
+    .header-content{
+        padding: 80px 25px;
+    }
+
+  }
+
+
+  /* latest area css */
+
+ .latest{
+    width: 100%;
+    padding: 100px 40px;
+ }
+
+.latest-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px;
+}
+
+.latest-col{
+
+} 
+.latest-col img{
+    width: 100%;
+    border-radius: 7px;
+    object-fit: cover;
+    height: 300px;
+}
+
+.latest-col h3{
+    margin: 25px 0;
+    text-transform: capitalize;
+
+}
+
+.latest-col .rating i{
+    text-align: center;
+        font-size: medium;
+        color: black;
+}
+
+
+@media only screen and (max-width: 670px) and (min-width:320px){
+
+    .latest-wrapper{
+        grid-template-columns: 1fr;
+    }
+    .lates{
+        margin-bottom: 30px;
+    }
+}
+
+/* mountain */
+
+.mountain{
+    width: 100%;
+    padding: 50px;
+}
+
+.mountain .title{
+
+    text-align: center;
+    padding-bottom: 25px;
+    color: rebeccapurple;
+    text-transform: capitalize;
+}
+
+.title h2{
+    display: inline-block;
+    text-transform: capitalize;
+    position: relative;
+}
+
+.title h2::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: rebeccapurple;
+    left: 0;
+    bottom: -5px;
+}
+
+.mountaine-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-gap: 10px;
+}
+
+.mountain-col{
+    position: relative;
+    cursor: pointer;
+}
+
+.mountain-col img{
+    width: 100%;
+    border-radius: 5px;
+    height: 300px;
+    object-fit: cover;
+}
+
+
+.mountain-overlay{
+    position: absolute;
+    background: linear-gradient(rgba(0,0,30,0.4),rgba(0,30,0,0.5));
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 5px;
+    opacity: 0;
+    transition: .5s;
+}
+
+.mountain-overlay h3{
+    text-align: center;
+    margin-top: 40%;
+    color: white;
+}
+.mountain-col:hover .mountain-overlay{
+
+    opacity: 1;
+    /* bottom: 0; */
+}
+
+@media only screen and (max-width: 670px) and (min-width:320px){
+
+    .mountaine-wrapper{
+        grid-template-columns: 1fr;
+    }
+    .mountain-col{
+        margin-bottom: 30px;
+    }
+}
+
+/* about area */
+
+.about{
+    width: 100%;
+    padding: 50px 20px;
+}
+
+.about-wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+.about .title{
+    text-align: center;
+    padding-bottom: 50px;
+    color: rebeccapurple;
+}
+
+.about-col{
+    flex-basis: 40%;
+}
+
+.about-col img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.about-col2{
+    flex-basis: 60%;
+    text-align: center;
+}
+
+.about-col2 h2{
+    color: rebeccapurple;
+    text-transform: capitalize;
+    margin-bottom: 50px;
+
+}
+
+.about-col2 p{
+    text-transform: capitalize;
+    color: rebeccapurple;
+    margin-bottom: 20px;
+}
+
+.about-col2 button{
+    width: 120px;
+    padding: 10px 20px;
+    background: rebeccapurple;
+    color: white;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+@media only screen and (max-width: 670px) and (min-width:320px){
+
+    .about-col{
+       flex-basis: 100%;
+       margin-bottom: 30px;
+    }
+    .about-col2{
+        flex-basis: 100%;
+    }
+}
+
+
+/* contact area */
+
+.contact{
+    padding: 50px;
+    background:plum;
+}
+
+.contact .title{
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.contactr-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.contactr-wrapper .contact-col{
+    flex-basis: 49%;
+}
+
+.contact-col h3{
+    color: white;
+    margin-bottom: 20px;
+}
+
+.contact-col p{
+    color: white;
+    margin-bottom: 30px;
+}
+
+.contact-col ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin: 0px 10px;
+    font-size: 18px;
+ 
+}
+
+.contact-col ul li a{
+    background: darkslategray;
+    padding: 10px;
+
+    color: white;
+    border-radius: 3px;
+    transition: 1s;
+}
+.contact-col ul li a:hover{
+    background:transparent;
+    color: rebeccapurple;
+    border-radius: 3px;
+}
+
+.contact-col form{
+    width: 100%;
+}
+
+.contact-col form label{
+    display: block;
+}
+
+.contact-col form input{
+    width:80%;
+    margin-bottom: 25px;
+    padding: 5px 10px;
+    border: 1px solid blanchedalmond;
+    outline: none;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+
+.contact-col form textarea{
+    width: 80%;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.contact-col form input[type='submit']{
+    width: 120px;
+    padding: 8px 20px;
+    background: green;
+    color: white;border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 670px) and (min-width:320px){
+    .contact-col{
+        flex-basis: 100%;
+        margin-bottom: 40px;
+    }
+
+    .contact-col form input{
+        width: 100%
+    }
+
+    .contact-col form textarea{
+        width: 100%
+    }
+}
